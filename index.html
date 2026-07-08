@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Claude Local Chat</title>
+<style>
+  body { font-family: system-ui; max-width: 700px; margin: 40px auto; background: #faf9f7; }
+  #chat { border: 1px solid #ddd; border-radius: 8px; padding: 20px; height: 500px; overflow-y: auto; background: white; }
+  .msg { margin: 10px 0; padding: 10px 14px; border-radius: 10px; max-width: 80%; }
+  .user { background: #e8e4ff; margin-left: auto; text-align: right; }
+  .assistant { background: #f0f0f0; }
+  #inputRow { display: flex; margin-top: 10px; }
+  #input { flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc; }
+  button { padding: 10px 16px; margin-left: 8px; border: none; background: #d97757; color: white; border-radius: 6px; cursor: pointer; }
+</style>
+</head>
+<body>
+<h2>Claude (Local)</h2>
+<div id="chat"></div>
+<div id="inputRow">
+  <input id="input" placeholder="Type a message..." onkeydown="if(event.key==='Enter') send()">
+  <button onclick="send()">Send</button>
+  <button onclick="resetChat()">Reset</button>
+</div>
+
+<script>
+async function send() {
+  const input = document.getElementById("input");
+  const msg = input.value.trim();
+  if (!msg) return;
+  addMsg(msg, "user");
+  input.value = "";
+
+  const res = await fetch("/chat", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({message: msg})
+  });
+  const data = await res.json();
+  addMsg(data.reply, "assistant");
+}
+
+async function resetChat() {
+  await fetch("/reset", {method: "POST"});
+  document.getElementById("chat").innerHTML = "";
+}
+
+function addMsg(text, role) {
+  const div = document.createElement("div");
+  div.className = "msg " + role;
+  div.innerText = text;
+  document.getElementById("chat").appendChild(div);
+  div.scrollIntoView();
+}
+</script>
+</body>
+</html>

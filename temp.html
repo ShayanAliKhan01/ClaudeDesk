@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Newton's Third Law of Motion</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        background: #ffffff;
+        color: #2c3e50;
+        line-height: 1.7;
+    }
+    .page {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 40px 50px;
+    }
+    /* Header */
+    .header {
+        background: linear-gradient(135deg, #1a2a6c 0%, #2a4d9c 50%, #4a7bd4 100%);
+        color: white;
+        padding: 50px 50px 40px;
+        border-radius: 0 0 20px 20px;
+        text-align: center;
+    }
+    .header .subtitle {
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 13px;
+        opacity: 0.85;
+        margin-bottom: 10px;
+    }
+    .header h1 {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+    .header .tagline {
+        font-style: italic;
+        font-size: 17px;
+        opacity: 0.9;
+    }
+    /* Law statement box */
+    .law-box {
+        background: #fff8e7;
+        border: 2px solid #f0c040;
+        border-left: 8px solid #f0a020;
+        border-radius: 10px;
+        padding: 25px 30px;
+        margin: 35px 0;
+        text-align: center;
+    }
+    .law-box .law-label {
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 3px;
+        color: #b07800;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .law-box .law-text {
+        font-size: 22px;
+        font-style: italic;
+        color: #5a4500;
+        font-weight: bold;
+    }
+    /* Sections */
+    h2 {
+        color: #1a2a6c;
+        font-size: 26px;
+        margin: 40px 0 15px;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #4a7bd4;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    h2 .num {
+        background: #1a2a6c;
+        color: white;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+    p { margin-bottom: 14px; font-size: 16px; }
+    /* Formula */
+    .formula {
+        background: #eef3fb;
+        border-radius: 10px;
+        padding: 25px;
+        text-align: center;
+        margin: 25px 0;
+        border: 1px solid #c5d5ee;
+    }
+    .formula .equation {
+        font-size: 32px;
+        font-family: 'Cambria Math', Georgia, serif;
+        color: #1a2a6c;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .formula .explain {
+        font-size: 14px;
+        color: #555;
+    }
+    /* Examples grid */
+    .examples {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin: 25px 0;
+    }
+    .example-card {
+        background: #f7f9fc;
+        border: 1px solid #dde5f0;
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .example-card .icon {
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+    .example-card h3 {
+        color: #2a4d9c;
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+    .example-card p {
+        font-size: 14px;
+        margin: 0;
+        color: #444;
+    }
+    /* Diagram */
+    .diagram {
+        text-align: center;
+        margin: 30px 0;
+        padding: 25px;
+        background: #fafbfd;
+        border-radius: 10px;
+        border: 1px dashed #a0b5d5;
+    }
+    .diagram-caption {
+        font-size: 13px;
+        color: #666;
+        font-style: italic;
+        margin-top: 12px;
+    }
+    /* Key points */
+    .key-points {
+        background: #e8f5ec;
+        border-left: 8px solid #2e9e50;
+        border-radius: 10px;
+        padding: 25px 30px;
+        margin: 30px 0;
+    }
+    .key-points h3 {
+        color: #1d6e36;
+        margin-bottom: 12px;
+        font-size: 19px;
+    }
+    .key-points ul { padding-left: 22px; }
+    .key-points li { margin-bottom: 8px; font-size: 15px; }
+    /* Misconception box */
+    .misconception {
+        background: #fdeeee;
+        border-left: 8px solid #d04040;
+        border-radius: 10px;
+        padding: 25px 30px;
+        margin: 30px 0;
+    }
+    .misconception h3 {
+        color: #a02020;
+        margin-bottom: 12px;
+        font-size: 19px;
+    }
+    .misconception p { font-size: 15px; }
+    /* Table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 15px;
+    }
+    th {
+        background: #1a2a6c;
+        color: white;
+        padding: 12px 15px;
+        text-align: left;
+    }
+    td {
+        padding: 11px 15px;
+        border-bottom: 1px solid #dde5f0;
+    }
+    tr:nth-child(even) { background: #f4f7fc; }
+    /* Footer */
+    .footer {
+        margin-top: 50px;
+        padding: 25px;
+        text-align: center;
+        background: #1a2a6c;
+        color: white;
+        border-radius: 20px 20px 0 0;
+        font-size: 14px;
+    }
+    .footer .quote {
+        font-style: italic;
+        font-size: 16px;
+        margin-bottom: 8px;
+        opacity: 0.95;
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <div class="subtitle">Classical Mechanics · Physics Fundamentals</div>
+    <h1>Newton's Third Law of Motion</h1>
+    <div class="tagline">The Law of Action and Reaction</div>
+</div>
+
+<div class="page">
+
+    <div class="law-box">
+        <div class="law-label">The Law States</div>
+        <div class="law-text">"For every action, there is an equal and opposite reaction."</div>
+    </div>
+
+    <h2><span class="num">1</span> Introduction</h2>
+    <p>
+        Sir Isaac Newton published his three laws of motion in 1687 in his famous work
+        <em>Philosophiæ Naturalis Principia Mathematica</em>. The <strong>Third Law</strong> describes
+        the fundamental nature of forces: they always occur in <strong>pairs</strong>. Whenever one
+        object exerts a force on a second object, the second object simultaneously exerts a force
+        of equal magnitude but opposite direction on the first object.
+    </p>
+
+    <h2><span class="num">2</span> The Mathematical Form</h2>
+    <div class="formula">
+        <div class="equation">F<sub>A→B</sub> = − F<sub>B→A</sub></div>
+        <div class="explain">
+            The force exerted by object A on object B is equal in magnitude and opposite in direction
+            to the force exerted by object B on object A.
+        </div>
+    </div>
+    <p>
+        The negative sign indicates that the two forces point in <strong>opposite directions</strong>.
+        Importantly, these two forces act on <strong>different objects</strong> — which is why they
+        never cancel each other out.
+    </p>
+
+    <h2><span class="num">3</span> Visualizing the Law</h2>
+    <div class="diagram">
+        <svg width="600" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+            <!-- Object A -->
+            <rect x="120" y="55" width="110" height="70" rx="8" fill="#4a7bd4" stroke="#1a2a6c" stroke-width="3"/>
+            <text x="175" y="97" font-size="20" fill="white" text-anchor="middle" font-family="Georgia" font-weight="bold">A</text>
+            <!-- Object B -->
+            <rect x="370" y="55" width="110" height="70" rx="8" fill="#e8944a" stroke="#a05a1a" stroke-width="3"/>
+            <text x="425" y="97" font-size="20" fill="white" text-anchor="middle" font-family="Georgia" font-weight="bold">B</text>
+            <!-- Arrow A pushes B (right) -->
+            <line x1="235" y1="75" x2="355" y2="75" stroke="#d04040" stroke-width="5"/>
+            <polygon points="365,75 345,66 345,84" fill="#d04040"/>
+            <text x="300" y="60" font-size="14" fill="#d04040" text-anchor="middle" font-family="Georgia" font-weight="bold">F (A on B)</text>
+            <!-- Arrow B pushes A (left) -->
+            <line x1="365" y1="108" x2="245" y2="108" stroke="#2e9e50" stroke-width="5"/>
+            <polygon points="235,108 255,99 255,117" fill="#2e9e50"/>
+            <text x="300" y="138" font-size="14" fill="#2e9e50" text-anchor="middle" font-family="Georgia" font-weight="bold">F (B on A)</text>
+        </svg>
+        <div class="diagram-caption">
+            Figure 1: Action–reaction force pair. Equal in magnitude, opposite in direction,
+            acting on different objects.
+        </div>
+    </div>
+
+    <h2><span class="num">4</span> Everyday Examples</h2>
+    <div class="examples">
+        <div class="example-card">
+            <div class="icon">🚀</div>
+            <h3>Rocket Propulsion</h3>
+            <p>A rocket pushes hot gases downward (action); the gases push the rocket upward (reaction), lifting it into space.</p>
+        </div>
+        <div class="example-card">
+            <div class="icon">🚶</div>
+            <h3>Walking</h3>
+            <p>Your foot pushes backward on the ground (action); the ground pushes your foot forward (reaction), moving you ahead.</p>
+        </div>
+        <div class="example-card">
+            <div class="icon">🏊</div>
+            <h3>Swimming</h3>
+            <p>A swimmer pushes water backward (action); the water pushes the swimmer forward (reaction).</p>
+        </div>
+        <div class="example-card">
+            <div class="icon">🔫</div>
+            <h3>Gun Recoil</h3>
+            <p>A gun pushes the bullet forward (action); the bullet pushes the gun backward (reaction), causing recoil.</p>
+        </div>
+        <div class="example-card">
+            <div class="icon">🎈</div>
+            <h3>Balloon Release</h3>
+            <p>Air rushes out of a balloon in one direction (action); the balloon flies off in the opposite direction (reaction).</p>
+        </div>
+        <div class="example-card">
+            <div class="icon">🛶</div>
+            <h3>Rowing a Boat</h3>
+            <p>Oars push the water backward (action); the water pushes the boat forward (reaction).</p>
+        </div>
+    </div>
+
+    <h2><span class="num">5</span> Properties of Action–Reaction Pairs</h2>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><strong>Equal Magnitude</strong></td>
+            <td>Both forces have exactly the same strength.</td>
+        </tr>
+        <tr>
+            <td><strong>Opposite Direction</strong></td>
+            <td>The forces point in exactly opposite directions.</td>
+        </tr>
+        <tr>
+            <td><strong>Different Objects</strong></td>
+            <td>Each force acts on a different body — they never cancel out.</td>
+        </tr>
+        <tr>
+            <td><strong>Simultaneous</strong></td>
+            <td>Both forces occur at the same instant; there is no delay.</td>
+        </tr>
+        <tr>
+            <td><strong>Same Type</strong></td>
+            <td>Both forces are of the same nature (both gravitational, both contact, etc.).</td>
+        </tr>
+    </table>
+
+    <div class="misconception">
+        <h3>⚠️ Common Misconception</h3>
+        <p>
+            <strong>"If the forces are equal and opposite, why don't they cancel out?"</strong><br><br>
+            Action and reaction forces act on <em>different objects</em>. Forces can only cancel when
+            they act on the <em>same object</em>. When you push a wall, your force acts on the wall,
+            while the wall's reaction force acts on <em>you</em> — two different bodies, so no cancellation occurs.
+        </p>
+    </div>
+
+    <div class="key-points">
+        <h3>✅ Key Takeaways</h3>
+        <ul>
+            <li>Forces always exist in pairs — a single isolated force is impossible.</li>
+            <li>Action and reaction are equal in magnitude and opposite in direction.</li>
+            <li>The paired forces act on two different objects, so they never cancel.</li>
+            <li>Both forces act simultaneously — neither one comes "first."</li>
+            <li>This law explains propulsion: rockets, walking, swimming, and flight.</li>
+        </ul>
+    </div>
+
+    <h2><span class="num">6</span> Worked Example</h2>
+    <p>
+        <strong>Problem:</strong> A book of mass 2 kg rests on a table. The book presses down on the
+        table with a force of 19.6 N. What force does the table exert on the book?
+    </p>
+    <p>
+        <strong>Solution:</strong> By Newton's Third Law, the table exerts an equal and opposite force
+        of <strong>19.6 N upward</strong> on the book (called the <em>normal force</em>). This is why the
+        book remains at rest — the upward push of the table balances the downward pull of gravity acting on the book.
+    </p>
+
+</div>
+
+<div class="footer">
+    <div class="quote">"To every action there is always opposed an equal reaction." — Sir Isaac Newton, 1687</div>
+    <div>Physics Fundamentals Series · Newton's Laws of Motion · Page 1</div>
+</div>
+
+</body>
+</html>

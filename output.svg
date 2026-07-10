@@ -1,0 +1,119 @@
+<svg width="600" height="750" viewBox="0 0 600 750" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a3d2e"/>
+      <stop offset="100%" style="stop-color:#01411C"/>
+    </linearGradient>
+    <linearGradient id="frameGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="50%" style="stop-color:#f5e28a"/>
+      <stop offset="100%" style="stop-color:#b8912a"/>
+    </linearGradient>
+    <linearGradient id="suitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2b2b35"/>
+      <stop offset="100%" style="stop-color:#15151c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="750" fill="url(#bgGrad)"/>
+
+  <!-- Decorative Pakistan flag element (top left) -->
+  <g transform="translate(40, 40)">
+    <rect x="0" y="0" width="90" height="60" rx="4" fill="#01411C" stroke="#d4af37" stroke-width="2"/>
+    <rect x="0" y="0" width="22" height="60" rx="4" fill="#ffffff"/>
+    <circle cx="58" cy="30" r="15" fill="#ffffff"/>
+    <circle cx="63" cy="27" r="13" fill="#01411C"/>
+    <path d="M 70 15 L 72.5 22 L 80 22 L 74 26.5 L 76.5 34 L 70 29.5 L 63.5 34 L 66 26.5 L 60 22 L 67.5 22 Z" fill="#ffffff"/>
+  </g>
+
+  <!-- Ornamental frame -->
+  <rect x="30" y="30" width="540" height="690" rx="15" fill="none" stroke="url(#frameGold)" stroke-width="4"/>
+  <rect x="42" y="42" width="516" height="666" rx="10" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
+
+  <!-- Portrait -->
+  <g transform="translate(300, 330)">
+    <!-- Shoulders / Suit -->
+    <path d="M -150 250 Q -150 130 -85 105 L -40 88 L 40 88 L 85 105 Q 150 130 150 250 Z" fill="url(#suitGrad)"/>
+    <!-- Shirt -->
+    <path d="M -40 88 L 0 150 L 40 88 L 30 82 L -30 82 Z" fill="#ffffff"/>
+    <!-- Tie -->
+    <path d="M -8 92 L 8 92 L 12 130 L 0 190 L -12 130 Z" fill="#01411C"/>
+    <path d="M -8 92 L 8 92 L 5 102 L -5 102 Z" fill="#026b2f"/>
+    <!-- Suit lapels -->
+    <path d="M -40 88 L -10 140 L -35 165 L -60 105 Z" fill="#3a3a46"/>
+    <path d="M 40 88 L 10 140 L 35 165 L 60 105 Z" fill="#3a3a46"/>
+    <!-- Flag pin on lapel -->
+    <circle cx="-48" cy="125" r="8" fill="#01411C" stroke="#d4af37" stroke-width="1.5"/>
+    <path d="M -50 121 L -49 124 L -46 124 L -48.5 126 L -47.5 129 L -50 127 L -52.5 129 L -51.5 126 L -54 124 L -51 124 Z" fill="#ffffff" transform="scale(0.9)"/>
+
+    <!-- Neck -->
+    <path d="M -25 45 L -25 85 Q 0 100 25 85 L 25 45 Z" fill="#c8a07a"/>
+    <path d="M -25 55 Q 0 70 25 55 L 25 45 L -25 45 Z" fill="#b58c66"/>
+
+    <!-- Head -->
+    <ellipse cx="0" cy="-10" rx="72" ry="85" fill="#d4ab84"/>
+    <!-- Ears -->
+    <ellipse cx="-70" cy="-5" rx="12" ry="20" fill="#c8a07a"/>
+    <ellipse cx="70" cy="-5" rx="12" ry="20" fill="#c8a07a"/>
+
+    <!-- Hair (grey/white, receding) -->
+    <path d="M -72 -35 Q -70 -85 -30 -92 Q 0 -98 30 -92 Q 70 -85 72 -35 Q 72 -55 60 -68 Q 40 -84 0 -85 Q -40 -84 -60 -68 Q -72 -55 -72 -35 Z" fill="#d8d8d8"/>
+    <path d="M -72 -35 Q -74 -20 -71 -8 Q -76 -25 -73 -42 Z" fill="#c8c8c8"/>
+    <path d="M 72 -35 Q 74 -20 71 -8 Q 76 -25 73 -42 Z" fill="#c8c8c8"/>
+
+    <!-- Eyebrows -->
+    <path d="M -48 -32 Q -32 -40 -16 -33" stroke="#8a8a8a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M 16 -33 Q 32 -40 48 -32" stroke="#8a8a8a" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+    <!-- Eyes -->
+    <ellipse cx="-32" cy="-18" rx="13" ry="8" fill="#ffffff"/>
+    <ellipse cx="32" cy="-18" rx="13" ry="8" fill="#ffffff"/>
+    <circle cx="-32" cy="-17" r="5.5" fill="#4a2f1d"/>
+    <circle cx="32" cy="-17" r="5.5" fill="#4a2f1d"/>
+    <circle cx="-30" cy="-19" r="2" fill="#000000"/>
+    <circle cx="34" cy="-19" r="2" fill="#000000"/>
+    <path d="M -45 -22 Q -32 -28 -19 -22" stroke="#b58c66" stroke-width="2" fill="none"/>
+    <path d="M 19 -22 Q 32 -28 45 -22" stroke="#b58c66" stroke-width="2" fill="none"/>
+
+    <!-- Glasses -->
+    <rect x="-50" y="-30" width="36" height="26" rx="10" fill="none" stroke="#5a4632" stroke-width="2.5"/>
+    <rect x="14" y="-30" width="36" height="26" rx="10" fill="none" stroke="#5a4632" stroke-width="2.5"/>
+    <path d="M -14 -22 Q 0 -27 14 -22" stroke="#5a4632" stroke-width="2.5" fill="none"/>
+    <path d="M -50 -22 L -68 -18" stroke="#5a4632" stroke-width="2.5"/>
+    <path d="M 50 -22 L 68 -18" stroke="#5a4632" stroke-width="2.5"/>
+
+    <!-- Nose -->
+    <path d="M -2 -15 Q -6 8 -12 16 Q 0 24 12 16 Q 6 8 2 -15" fill="#c8a07a"/>
+    <path d="M -12 16 Q 0 22 12 16" stroke="#a87d5a" stroke-width="1.5" fill="none"/>
+
+    <!-- Moustache -->
+    <path d="M -28 32 Q 0 24 28 32 Q 15 38 0 37 Q -15 38 -28 32 Z" fill="#b8b8b8"/>
+
+    <!-- Mouth -->
+    <path d="M -22 48 Q 0 58 22 48" stroke="#9c6b52" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <!-- Face contour lines -->
+    <path d="M -52 20 Q -56 32 -50 44" stroke="#b58c66" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M 52 20 Q 56 32 50 44" stroke="#b58c66" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <!-- Chin -->
+    <path d="M -20 62 Q 0 72 20 62" stroke="#b58c66" stroke-width="1.5" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- Star and crescent watermark (right) -->
+  <g transform="translate(505, 90)" opacity="0.9">
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#d4af37" stroke-width="2"/>
+    <path d="M 8 -18 A 20 20 0 1 0 8 18 A 16 16 0 1 1 8 -18 Z" fill="#d4af37"/>
+    <path d="M 14 -4 L 16.5 3 L 24 3 L 18 7.5 L 20.5 15 L 14 10.5 L 7.5 15 L 10 7.5 L 4 3 L 11.5 3 Z" fill="#d4af37"/>
+  </g>
+
+  <!-- Name plate -->
+  <g transform="translate(300, 655)">
+    <rect x="-220" y="-32" width="440" height="80" rx="12" fill="#01411C" stroke="url(#frameGold)" stroke-width="2.5"/>
+    <text x="0" y="-2" font-family="Georgia, serif" font-size="30" font-weight="bold" fill="#f5e28a" text-anchor="middle">Muhammad Shehbaz Sharif</text>
+    <text x="0" y="30" font-family="Georgia, serif" font-size="17" fill="#ffffff" text-anchor="middle" opacity="0.9">Prime Minister of the Islamic Republic of Pakistan</text>
+  </g>
+
+  <!-- Decorative bottom line -->
+  <line x1="80" y1="612" x2="520" y2="612" stroke="#d4af37" stroke-width="1.5" opacity="0.6"/>
+</svg>
